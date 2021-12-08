@@ -3,109 +3,109 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/mycss.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/mycss.css">
 </head>
 
 <body class="text-center">
-<header>
+  <header>
     <nav class="navbar sticky-top navbar-light" style="background-color: hsl(335, 92%, 43%);">
-        <img src="images/chalkboardlogo.jpg" alt="Logo" class="logo" height="70" width="100">
-
+      <img src="images/chalkboardlogo.jpg" alt="Logo" class="logo" height="70" width="100">
+     
     </nav>
+   
+  </header>
 
-</header>
+    <h1>Sign Up</h1>
 
-<h1>Sign Up</h1>
+    <form class="form-inline"  id="reg2-form" >
+      <label class="mb-3">First Name</label>
+      <input type="text" id="firstname" placeholder="amy" /><br>
+      <label class="mb-3">Last Name</label>
+      <input type="text" id="lastname" placeholder="lee" /><br>
+      <label class="mb-3">Email</label>
+      <input type="email" id="email" placeholder="abc@kmail.com" /><br>
+      <label class="mb-3">Password</label>
+      <input type="password" id="password" placeholder="" /><br>
+      <label class="mb-3">Role</label>
+      <input type="role" id="role" placeholder="teacher" /><br>
+      <input type="submit" value="Submit Form" class="btn btn-success" style="margin-top: 50px;"/><br>
+     
+    </form>
 
-<form class="form-inline"  id="reg2-form" >
-    <label class="mb-3">First Name</label>
-    <input type="text" id="firstname" placeholder="amy" /><br>
-    <label class="mb-3">Last Name</label>
-    <input type="text" id="lastname" placeholder="lee" /><br>
-    <label class="mb-3">Email</label>
-    <input type="email" id="email" placeholder="abc@kmail.com" /><br>
-    <label class="mb-3">Password</label>
-    <input type="password" id="password" placeholder="" /><br>
-    <label class="mb-3">Role</label>
-    <input type="role" id="role" placeholder="teacher" /><br>
-    <input type="submit" value="Submit Form" class="btn btn-success" style="margin-top: 50px;"/><br>
-
-</form>
-
-
-<p style="padding-top: 50px;">
-    By clicking the Sign Up button,you agree to our <br />
-    <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
-</p>
-</div>
-<p class="text-center">
+ 
+    <p style="padding-top: 50px;">
+      By clicking the Sign Up button,you agree to our <br />
+      <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+    </p>
+  </div>
+  <p class="text-center">
     Already have an account? <a href="/teacherlogin" class="btn btn-warning">Login here</a>
-</p>
+  </p>
 
-<footer class="sticky-bottom" style=" margin-top:300px">
+  <footer class="sticky-bottom" style=" margin-top:300px">
     <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link disabled" aria-current="page" href="#">King's College</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="mailto:12345@email.com">12345@email.com</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">(000)-(111)-(2222)</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#">100 St. Ave Z. New York,NY 00001</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled">&copy; 2021</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" aria-current="page" href="#">King's College</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="mailto:12345@email.com">12345@email.com</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">(000)-(111)-(2222)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">100 St. Ave Z. New York,NY 00001</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">&copy; 2021</a>
+      </li>
     </ul>
-</footer>
+  </footer>
 
-<script>
+<script> 
 
-    const form =document.getElementById('reg2-form')
-    form.addEventListener('submit', registerUser2)
+const form =document.getElementById('reg2-form')
+form.addEventListener('submit', registerUser2)
 
 
-    async function registerUser2(event){
-        event.preventDefault()
+async function registerUser2(event){
+  event.preventDefault()
 
-        const firstname= document.getElementById('firstname').value
-        const lastname= document.getElementById('lastname').value
-        const email= document.getElementById('email').value
-        const password= document.getElementById('password').value
-        const role= document.getElementById('role').value
-        const data={firstname,lastname,email,password,role};
+  const firstname= document.getElementById('firstname').value
+  const lastname= document.getElementById('lastname').value
+  const email= document.getElementById('email').value
+  const password= document.getElementById('password').value
+  const role= document.getElementById('role').value
+  const data={firstname,lastname,email,password,role};
 
-        await fetch('/api/register2',{
-            method:'POST',
-            mode: 'cors',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then((res) => res.json()).then((result)=>{
-            console.log(result);
-            if (result.status === 'ok') {
-                // everything went fine
-                alert('Success');
-                window.location.reload();
-            } else {
-                console.log(result.error);
-                alert(result.error)
-            }
-        })
-            .catch((error)=>console.log(error));
-
+  await fetch('/api/register2',{
+    method:'POST',
+     mode: 'cors',
+    headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(data)
+  }).then((res) => res.json()).then((result)=>{
+    console.log(result);
+    if (result.status === 'ok') {
+      // everythign went fine
+      alert('Success');
+      window.location.reload();
+    } else {
+      console.log(result.error);
+      alert(result.error)
     }
+  })
+  .catch((error)=>console.log(error));
+ 
+}
 
 </script>
 </body>
