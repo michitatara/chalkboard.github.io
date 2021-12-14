@@ -151,13 +151,13 @@ app.post("/login", async (req, res) => {
 // student homepage authriztion route
 
 app.get("/studenthomepage", Auth, (req, res) => {
-  res.render(path.join(__dirname, "/views", "StudentHomePage"));
+  res.render(path.join(__dirname, "/views", "StudentHomepage"));
 });
 
 // teacher homepage authriztion route
 
 app.get("/teacherhomepage", Auth, (req, res) => {
-  res.render(path.join(__dirname, "/views", "TeacherHomePage"));
+  res.render(path.join(__dirname, "/views", "TeacherHomepage"));
 });
 
 //teacher certain class
