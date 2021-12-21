@@ -1,5 +1,15 @@
 # chalkboard
 #### Team Members: Mezbahuddin Prottoy, Michelle Tatara, Mehruj Kamal
+
+#### Contributions: 
+We all are responsible for overall project and  review each other work but we each will focus on specific view such as Admin View, Instructor View, and Student View.  
+
+Mezbahuddin- Student View 
+
+Michelle- Instructor View 
+
+Mehruj- Admin View (handles the enrollment and approval for enrollment process which bridges between both views) 
+
 #### Navigating our Website.
 In navigating our websites there are three types of user that can access the website. They are Student,Teacher, and Admin. Student and teachers can sign up and login through the homepage of our signup and login page. Teacher has their own signup page that they can register through with the use of the Teacher button that directs them to Teacher registration form. Once registration is complete you can now sign in to Teacher or Student homepage depending on the type of user you are. You can not sign up as an Admin and is only given a set username of admin and password of user for the Admin account. Their role is to see the database of all registration and login activity of student and teachers at the moment. The choice of database management we have used for this project is mongoDB. 
 #### Student View:
@@ -7,9 +17,12 @@ So you first land on the sign/in and sign up page. Currently, there are three bu
 #### Teacher View:
 For teacher, when you click the button, it will land you on the teacher homepage. You can see the courses you are currently teaching, there is the option to create a new course, view any submitted assignments, and view any pending applications from students. When you click on a certain course you are teaching, you have the option to create a new assignment for the course. When you click on creating a new course, you input the information about the course into a form. When you click on a certain assignment to grade, you can view the assignment submitted by students and submit the final grade. For the pending applications from students, it shows the list of students that are trying to enroll and for which class. 
 #### Admin View:
-For admin, when you click the button, it will land you to the admin homepage. Admin view is iimited because much of it requires receiving data from the database. Admins are able to see list of available classes, teachers, and students. They are also able to see past search history. For past search history, we created a page with sample data. Wherever in the pages says, "hyperlink!!!", it means when we have actual data to connect to, we will link it to there with a hyperlink. 
-When you click on the logo, it directs you back to the respective homepage of the respective user. 
-Link to our website is found at: https://michitatara.github.io/chalkboard.github.io/. Website is currently designed in HTML and CSS only at the moment and will be updated to have JavaScript and a database soon. 
+For admin, there is no signup page for it. There is only a set user: admin, password: user. after entering in the user and password field correctly there will be a textbox that says "login successfuly" as shown below:
+![Screenshot (266)](https://user-images.githubusercontent.com/83977892/146867585-49835fdd-4d3a-4404-a56d-d9d7cf0aa2d9.png)
+Admin view is limited because much of it requires receiving data from the database. Admins are able to see list of available classes, teachers, and students. They are also able to see past search history. For past search history, we created a page with sample data. Wherever in the pages says, "hyperlink!!!", it means when we have actual data to connect to, we will link it to there with a hyperlink. 
+When you click on the logo, it directs you back to the respective homepage of the respective user. Also admin can see the database portion of all user login activity at the moment shown below: 
+![Screenshot (267)](https://user-images.githubusercontent.com/83977892/146867517-b1b397ef-7460-44f5-a391-b3bcd213ee30.png)
+Link to our live website is found at: https://chalkboard355.herokuapp.com/
 #### The following is a revised,digital version of our sitemap which we will be basing all future versions of our code off of
 ![chalkwirepart1](https://user-images.githubusercontent.com/59904212/138456799-7ccc740f-c18e-4689-bad7-597c16d161e0.jpg)
 ![chalkwirepart2](https://user-images.githubusercontent.com/59904212/138456993-e8bce0eb-b64e-48a9-b234-4881622c7d00.jpg)
