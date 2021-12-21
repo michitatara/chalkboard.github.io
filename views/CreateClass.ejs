@@ -39,9 +39,9 @@
     <h1>New Course</h1>
 
     <div class="container">
-      <form>
-        <label for="fname">Full name:</label><br />
-        <input type="text" id="fname" name="fname" /><br />
+      <form id='create-course'>
+        <label for="tId">Teacher ID:</label><br />
+        <input type="text" id="tID" name="tId" /><br />
         <label for="cname">Course name:</label><br />
         <input type="text" id="cname" name="cname" /> <br />
         <label for="cid">Course ID:</label><br />
@@ -49,10 +49,11 @@
         <label for="sub">Subject:</label><br />
         <input type="text" id="sub" name="sub" /><br />
         <label for="cap">Capacity:</label><br />
-        <input type="text" id="cap" name="cap" />
+        <input type="text" id="cap" name="cap" /><br />
+        <br />
+        <input type="button" value="Add New Course" onclick="addCourse(event);" class="btn btn-success" /><br />
       </form>
       <br />
-      <a href="/teacherhomepage" class="btn btn-success">Add new course</a>
     </div>
 
     <footer class="sticky-bottom" style="margin-top: 200px">
@@ -78,5 +79,33 @@
         </li>
       </ul>
     </footer>
+    <script>
+      const form = document.getElementById('create-course');
+        form.addEventListener('submit', addCourse)
+      async function addCourse() {
+        const tid = document.getElementById("tID").value;
+        const courseId = document.getElementById("cid").value;
+         const courseName = document.getElementById("cname").value;
+        const subject = document.getElementById("sub").value;
+         const capacity = document.getElementById("cap").value;
+         console.log('test');
+         const data={tid,courseId,courseName,subject,capacity};
+         console.log(data);
+        await fetch("/course", {
+          method: "POST",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((data) => data.json())
+          .then((data) => {
+            alert(data.status);
+          console.log(data.status);
+          })
+          .catch((err) => console.log(err));
+      }
+    </script>
   </body>
 </html>
