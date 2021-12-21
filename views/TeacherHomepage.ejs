@@ -10,8 +10,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mycss.css" />
+
     <script src="./js/logout.js"></script>
   </head>
 
@@ -22,7 +23,7 @@
         style="background-color: hsl(335, 92%, 43%)"
       >
         <img
-          src="images/chalkboardlogo.jpg"
+          src="./images/chalkboardlogo.jpg"
           alt="Logo"
           class="logo"
           height="70"
@@ -48,14 +49,17 @@
 
       <h3>All of My Classes:</h3>
       <p>Click on a class to see class info, current assignments, and more!</p>
-
+      <% if(data.length>0){ var i=0;data.forEach(function(d){%>
       <a href="/teachercertainclass">
-        <p>Math Class 253</p>
+        <p><%=d.courseName%></p>
       </a>
-      <p>English Class 300</p>
-      <p>History Class 325</p>
+      <% i++; }) %> <% } else{ %>
+      <tr>
+        <td colspan="3">No user</td>
+      </tr>
+      <% } %>
       <p><a href="/createclass" class="btn btn-success">Add Course</a></p>
-
+      <p class="btn btn-success" onclick="courseRequest();">course Requests</p>
       <a href="/gradeassignment">
         <p>View submitted Assignments</p>
       </a>
@@ -86,5 +90,12 @@
         </li>
       </ul>
     </footer>
+    <script>
+      function courseRequest() {
+        var path = this.pathname || window.location.pathname;
+        var teacherId = path.split("/").pop();
+        window.open(`http://localhost:3000/course/byteacherid/${teacherId}`);
+      }
+    </script>
   </body>
 </html>
