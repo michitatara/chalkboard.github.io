@@ -10,8 +10,8 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mycss.css" />
     <script src="./js/logout.js"></script>
   </head>
 
@@ -22,7 +22,7 @@
         style="background-color: hsl(335, 92%, 43%)"
       >
         <img
-          src="images/chalkboardlogo.jpg"
+          src="../images/chalkboardlogo.jpg"
           alt="Logo"
           class="logo"
           height="70"
@@ -41,16 +41,51 @@
 
     <form>
       <div class="assign">
-        <label for="assignment"></label><br />
+        <label for="assignment-id">Assignmet Id</label><br />
         <input
           type="text"
-          id="assignment"
-          name="assignment"
+          id="assignment-id"
+          name="assignment-id"
+          placeholder="assig Id"
+        /><br /><br />
+        <label for="course-id">Course Id</label><br />
+        <input
+          type="text"
+          id="course-id"
+          name="course-id"
+          placeholder="course-id"
+        /><br /><br />
+        <label for="course-name">Course Name</label><br />
+        <input
+          type="text"
+          id="course-name"
+          name="course-name"
+          placeholder="course-name"
+        /><br /><br />
+        <label for="teacher-id">Teacher Id</label><br />
+        <input
+          type="text"
+          id="teacher-id"
+          name="teacher-id"
+          placeholder="teacher Id"
+        /><br /><br />
+        <label for="Daedline">Daedline</label><br />
+        <input
+          type="text"
+          id="deadline"
+          name="deadline"
+          placeholder="daedline"
+        /><br /><br />
+        <label for="description">Description</label><br />
+        <input
+          type="text"
+          id="description"
+          name="description"
           placeholder="..."
           style="height: 200px; width: 400px"
         /><br /><br />
 
-        <a href="/teacherhomepage" class="btn btn-success">Submit</a>
+        <a class="btn btn-success" id="postform" onclick="post();">Submit</a>
       </div>
     </form>
 
@@ -77,5 +112,57 @@
         </li>
       </ul>
     </footer>
+    <script>
+      const form = document.getElementById("postform");
+      form.addEventListener("submit", post);
+      async function post() {
+        const assignmentId = document.getElementById("assignment-id").value;
+        const courseid = document.getElementById("course-id").value;
+        const coursename = document.getElementById("course-name").value;
+        const teacherId = document.getElementById("teacher-id").value;
+        const deadline = document.getElementById("deadline").value;
+        const description = document.getElementById("description").value;
+
+        const data = {
+          assignmentId,
+          courseid,
+          coursename,
+          teacherId,
+          deadline,
+          description,
+        };
+        if (
+          !assignmentId ||
+          !courseid ||
+          !coursename ||
+          !teacherId ||
+          !deadline ||
+          !description
+        ) {
+          alert("fill the form properly");
+        } else {
+          await fetch("/createassignmet", {
+            method: "POST",
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              console.log(result);
+              if (result.status === "Record Saved...") {
+                alert("Success");
+                window.location.reload();
+              } else {
+                console.log(result.error);
+                alert(result.error);
+              }
+            })
+            .catch((error) => console.log(error));
+        }
+      }
+    </script>
   </body>
 </html>
