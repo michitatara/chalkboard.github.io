@@ -28,6 +28,8 @@
       <input type="text" id="firstname" placeholder="amy" /><br>
       <label class="mb-3">Last Name</label>
       <input type="text" id="lastname" placeholder="lee" /><br>
+      <label class="mb-3">RID</label>
+      <input type="text" id="rid" placeholder="id" /><br>
       <label class="mb-3">Email</label>
       <input type="email" id="email" placeholder="abc@kmail.com" /><br>
       <label class="mb-3">Password</label>
@@ -75,17 +77,16 @@
 
 const form =document.getElementById('reg-form')
 form.addEventListener('submit', registerUser)
-
-
 async function registerUser(event){
   event.preventDefault()
   const firstname= document.getElementById('firstname').value
   const lastname= document.getElementById('lastname').value
+  const rid = document.getElementById('rid').value
   const email= document.getElementById('email').value
   const password= document.getElementById('password').value
   const role= document.getElementById('role').value
-  const data={firstname,lastname,email,password,role};
-if(role==='none' || !firstname || !lastname || !email || !password){
+  const data={firstname,lastname,rid,email,password,role};
+if(role==='none' || !firstname || !lastname || !rid || !email || !password){
   console.log(role);
   alert('fill the form properly')
 }
@@ -100,7 +101,6 @@ else{
   }).then((res) => res.json()).then((result)=>{
     console.log(result);
     if (result.status === 'ok') {
-      // everythign went fine
       alert('Success');
       window.location.href='/login';
     } else {
