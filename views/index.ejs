@@ -43,9 +43,6 @@
         onclick="validate()"
         class="btn btn-success"
       /><br />
-
-      <!-- <a href="./StudentHomepage.html" class="btn btn-success">Student</a>
-        <a href="./TeacherHomepage.html" class="btn btn-success">Teacher</a> -->
     </form>
 
     <p class="text-center" style="padding: 30px">
@@ -94,35 +91,23 @@
          
             if (data.role === 'teacher') {
                  alert(data.message);
-              window.location.href = "/teacherhomepage";
+              window.location.href = `/teacherhomepage/${data.id}`;
             }
           else if (data.role === "student") {
                  alert(data.message);
-              window.location.href = "/studenthomepage";
+              window.location.href = `/studenthomepage/${data.id}`;
             }
             else if(data.role==='admin'){
                alert(data.message);
                  window.location.href = "/adminhomepage";
             }
             else{
+              console.log(data.message);
                  alert('Error ',data.message);
             }
           })
           .catch((err) => console.log(err));
       }
-    
-
-      // function validate() {
-      //   var username = document.getElementById("username").value;
-      //   var password = document.getElementById("password").value;
-      //   if (username == "admin" && password == "user") {
-      //     alert("login successfully");
-      //     window.location.replace("/adminhomepage");
-      //     return false;
-      //   } else {
-      //     alert("login failed");
-      //   }
-      // }
     </script>
   </body>
 </html>
