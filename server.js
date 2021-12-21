@@ -1,14 +1,13 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-
 const User = require("./models/user");
 const Course = require("./models/course");
 const StudentCourse = require("./models/studentcourse");
 const Assignment = require("./models/assignment");
 const AssignmentStud = require("./models/assignmentStudent");
 const AssignmentStudResult = require("./models/assignmentStudResult");
-
+const CreateAssignment = require("./models/createAssignment");
 const ejs = require("ejs");
 const port = process.env.PORT || 3000;
 const app = express();
@@ -242,9 +241,13 @@ app.get("/all/courses", async (req, res) => {
 
 //get course by teacher
 app.get("/course/byteacherid/:tid", async (req, res) => {
-  Course.find({ tid: req.params.tid }, function (error, result) {
-    return res.json({ data: result });
-  });
+  StudentCourse.find()
+    .then((data) => {
+      res.render(path.join(__dirname, "/views", "RequestedCourses"), {
+        data: data,
+      });
+    })
+    .catch((err) => console.log(err));
 });
 
 //student request to teacher for enroll in course
@@ -317,7 +320,31 @@ app.post("/studentenrollrequest/update", async (req, res) => {
     }
   );
 });
-
+//Create Assignmet
+app.post("/createassignmet", async (req, res) => {
+  const {
+    assignmentId,
+    courseid,
+    coursename,
+    teacherId,
+    deadline,
+    description,
+  } = req.body;
+  const createAssignmet = await CreateAssignment({
+    assignmentId,
+    courseid,
+    coursename,
+    teacherId,
+    deadline,
+    description,
+  });
+  createAssignmet
+    .save()
+    .then((data) => {
+      res.json({ status: "Record Saved...", data });
+    })
+    .catch((err) => console.log(err));
+});
 //create Assignment
 app.post("/assignment", async (req, res) => {
   const {
@@ -596,8 +623,14 @@ app.get("/login", (req, res) => {
 
 // student homepage authriztion route
 
-app.get("/studenthomepage", Auth, (req, res) => {
-  res.render(path.join(__dirname, "/views", "StudentHomepage"));
+app.get("/studenthomepage/:id", Auth, (req, res) => {
+  Course.find()
+    .then((data) => {
+      res.render(path.join(__dirname, "/views", "StudentHomepage"), {
+        data: data,
+      });
+    })
+    .catch((err) => console.log(err));
 });
 
 // teacher homepage authriztion route
