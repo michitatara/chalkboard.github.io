@@ -1,6 +1,8 @@
 # chalkboard
 #### Team Members: Mezbahuddin Prottoy, Michelle Tatara, Mehruj Kamal
 
+Link to our live website is found at: https://chalkboard355.herokuapp.com/
+
 #### Contributions: 
 We all are responsible for overall project and  review each other work but we each will focus on specific view such as Admin View, Instructor View, and Student View.  
 
@@ -22,7 +24,6 @@ For admin, there is no signup page for it. There is only a set user: admin, pass
 Admin view is limited because much of it requires receiving data from the database. Admins are able to see list of available classes, teachers, and students. They are also able to see past search history. For past search history, we created a page with sample data. Wherever in the pages says, "hyperlink!!!", it means when we have actual data to connect to, we will link it to there with a hyperlink. 
 When you click on the logo, it directs you back to the respective homepage of the respective user. Also admin can see the database portion of all user login activity at the moment shown below: 
 ![Screenshot (267)](https://user-images.githubusercontent.com/83977892/146867517-b1b397ef-7460-44f5-a391-b3bcd213ee30.png)
-Link to our live website is found at: https://chalkboard355.herokuapp.com/
 #### The following is a revised,digital version of our sitemap which we will be basing all future versions of our code off of
 ![chalkwirepart1](https://user-images.githubusercontent.com/59904212/138456799-7ccc740f-c18e-4689-bad7-597c16d161e0.jpg)
 ![chalkwirepart2](https://user-images.githubusercontent.com/59904212/138456993-e8bce0eb-b64e-48a9-b234-4881622c7d00.jpg)
