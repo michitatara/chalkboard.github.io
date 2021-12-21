@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/mycss.css" />
+  </head>
+
+  <body class="text-center">
+    <header>
+      <nav
+        class="navbar sticky-top navbar-light"
+        style="background-color: hsl(335, 92%, 43%)"
+      >
+        <img
+          src="images/chalkboardlogo.jpg"
+          alt="Logo"
+          class="logo"
+          height="70"
+          width="100"
+        />
+      </nav>
+    </header>
+
+    <form action="index.html" method="POST">
+      <h1>Login</h1>
+      <label>Email</label>
+      <input type="username" placeholder="User@email.com" id="username" /><br />
+      <label>Password</label>
+      <input type="password" placeholder="Password" id="password" /><br />
+      <!-- <label>Role</label>
+      <input type="role" placeholder="teacher/student" id="role" /><br /> -->
+
+      <input
+        type="button"
+        value="Submit"
+        onclick="validate()"
+        class="btn btn-success"
+      /><br />
+    </form>
+
+    <p class="text-center" style="padding: 30px">
+      Don't have an account? <a href="/">Sign Up Here</a>
+    </p>
+
+    <footer class="sticky-bottom" style="margin-top: 300px">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-current="page" href="#"
+            >King's College</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:12345@email.com">12345@email.com</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">(000)-(111)-(2222)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#"
+            >100 St. Ave Z. New York,NY 00001</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">&copy; 2021</a>
+        </li>
+      </ul>
+    </footer>
+    <script>
+      async function validate() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+       
+        const data = { email: username, password };
+        await fetch("/login", {
+          method: "POST",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((data) => data.json())
+          .then((data) => {
+         
+            if (data.role === 'teacher') {
+                 alert(data.message);
+              window.location.href = `/teacherhomepage/${data.id}`;
+            }
+          else if (data.role === "student") {
+                 alert(data.message);
+              window.location.href = `/studenthomepage/${data.id}`;
+            }
+            else if(data.role==='admin'){
+               alert(data.message);
+                 window.location.href = "/adminhomepage";
+            }
+            else{
+              console.log(data.message);
+                 alert('Error ',data.message);
+            }
+          })
+          .catch((err) => console.log(err));
+      }
+    </script>
+  </body>
+</html>

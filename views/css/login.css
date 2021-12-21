@@ -1,0 +1,210 @@
+body{
+    background-color: #b3ffff;
+    font-family: "Roboto", sans-serif;
+    margin:0;
+    padding: 0;
+}
+header{
+    text-align: left;
+    color:white;
+    margin:0;
+    padding: 0;
+}
+
+.topnav{
+    background-image: linear-gradient(#c31432, #240b36);
+    border: 5px solid black;
+
+}
+
+.signup-box{
+    width: 360px;
+    height: 550px;
+    margin: 5px auto;
+    border: 3px solid black;
+    background-color: white;
+    color: black;
+}
+
+.login-box{
+    width: 360px;
+    height: 300px;
+    background-color: white;
+    margin: 5px auto;
+    border: 3px solid black;
+    color: black;
+}
+
+
+h1{
+    text-align: center;
+    padding-top: 15px;
+    color: black;
+}
+
+h4{
+    text-align: center;
+}
+
+form{
+    width:300px;
+    margin-left: 20px;
+}
+
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+
+
+}
+input[type="button"] {
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #49c1a2;
+    color: white;
+    font-size: 18px;
+}
+p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+
+
+}
+.para-2 {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    color: black;
+
+
+
+}
+.para-2 a {
+    color: #49c1a2;
+    margin: 0;
+    padding:0;
+
+}
+
+
+footer{
+    border: 5px solid black;
+    background-image: linear-gradient(#c31432, #240b36);
+    color: #F7FFF7;
+    margin-top: 30px;
+    margin-bottom:-5px;
+    padding: 0;
+}
+
+.contact-list{
+    margin-right: 10px;
+    margin-left: 10px;
+    display:flex;
+    list-style-type:none;
+    padding: 0;
+    justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+    nav{
+        background-image:url(/chalkboard.github.io/Images/logobannernowords.jpg);
+        background-repeat: no-repeat;
+        background-attachment:scroll;
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size:cover;
+        background-size:cover;
+        -o-background-size: cover;
+        min-height:725px;
+    }
+    .header a, .searchtopnav input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+}
+
+body {
+    background-color: #b3ffff;
+    height:100%;
+    margin:0;
+}
+
+#inner {
+    overflow: hidden;
+    width: 2000px;
+
+}
+.content-wrap{
+    margin: auto;
+    min-height:100%;
+    padding: 0;
+    width:900px;
+}
+
+#logotopnav {
+    float: left;
+    margin-right: 80px;
+}
+
+#banner {
+    float:left;
+    height:auto;
+    max-width: 100%;
+    padding: 0px;
+    width:100px;
+}
+
+nav{
+    background-blend-mode: multiply;
+    background-size: contain;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    overflow: hidden;
+    height:100%
+}
+header {
+    overflow: hidden;
+    background-image: linear-gradient(#c31432, #240b36);
+}
+.text-wrapper{
+    position:relative;
+    width:90%;
+    margin:0 auto;
+}
+.text-wrapper img{
+    width:700px;
+    background-size:contain;
+    background-repeat: repeat-y;
+    overflow:visible;
+}
+.heading {
+    color: #ff8000;
+    position: absolute;
+    top: 0%;
+    left: 210%;
+    width: 100%;
+    text-align: right;
+    white-space: nowrap;
+    font-size: 2em;
+    font-family: 'Ubuntu', sans-serif;
+}

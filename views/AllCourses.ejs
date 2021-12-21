@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Available Courses Page</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mycss.css" />
+    <script src="./js/logout.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav
+        class="navbar sticky-top navbar-light"
+        style="background-color: hsl(335, 92%, 43%)"
+      >
+        <img
+          src="../images/chalkboardlogo.jpg"
+          alt="Logo"
+          class="logo"
+          height="70"
+          width="100"
+        />
+        <a
+          href="./login"
+          class="btn btn-warning"
+          style="position: absolute; top: 2rem; right: 2.5rem"
+          onclick="logout();"
+          >Log Out</a
+        >
+      </nav>
+      <div class="text-center">
+        <input type="text" placeholder="Search.." />
+      </div>
+    </header>
+    <main>
+      <div class="mycontainer">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">
+              click here to view List of all available classes:
+            </h5>
+            <% if(data.length>0){ var i=0;data.forEach(function(d){%>
+            <a href="/StudentCertainClass">
+              <p><%=d.courseName%></p>
+            </a>
+            <% i++; }) %> <% } else{ %>
+            <tr>
+              <td colspan="3">No user</td>
+            </tr>
+            <% } %>
+          </div>
+        </div>
+      </div>
+
+      <footer class="sticky-bottom" style="margin-top: 370px">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-current="page" href="#"
+              >King's College</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:12345@email.com"
+              >12345@email.com</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">(000)-(111)-(2222)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#"
+              >100 St. Ave Z. New York,NY 00001</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">&copy; 2021</a>
+          </li>
+        </ul>
+      </footer>
+    </main>
+  </body>
+</html>

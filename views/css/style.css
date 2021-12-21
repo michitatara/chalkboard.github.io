@@ -1,0 +1,262 @@
+body{
+    background-color: #b3ffff;
+    font-family: "Roboto", sans-serif;
+    margin:0;
+    padding: 0;
+}
+header{
+    text-align: left;
+    color:white;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(#c31432, #240b36);
+}
+
+.topnav{
+    background-image: linear-gradient(#c31432, #240b36);
+    border: 5px solid black;
+
+}
+
+#inner {
+    overflow: hidden;
+    width: 2000px;
+
+}
+#logotopnav {
+    float: left;
+    margin-right: 80px;
+}
+#banner {
+    float:left;
+    height:auto;
+    max-width: 100%;
+    padding: 0px;
+    width:100px;
+}
+.content-wrap{
+    margin: auto;
+    min-height:100%;
+    padding: 0;
+    width:900px;
+}
+nav{
+    background-blend-mode: multiply;
+    background-size: contain;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    overflow: hidden;
+    height:100%
+}
+
+.banner{
+    float:left;
+    height:auto;
+    max-width: 100%;
+    padding: 0px;
+    width:100px;
+}
+
+.text-wrapper{
+    position:relative;
+    width:90%;
+    margin:0 auto;
+}
+.text-wrapper img{
+    width:700px;
+    background-size:contain;
+    background-repeat: repeat-y;
+    overflow:visible;
+}
+
+.heading{
+    color: #ff8000;
+    position: absolute;
+    top:0%;
+    left:210%;
+    width:100%;
+    text-align: right;
+    white-space: nowrap;
+    font-size:2em;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* ------------------------TeacherHomepage----------------------- */
+
+
+.header h1{
+    position: relative;
+    top: 18px;
+    left: 10px;
+    margin-left: 5px;
+
+}
+
+.header img{
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    border: 5px solid black;
+    float: left;
+}
+
+.list-classes{
+    width: 500px;
+    height: 320px;
+    text-align: left;
+    background-color: #ADD8E6;
+    border-radius: 3px;
+    margin: 0;
+    border: 5px solid black;
+}
+.list-classes p, h3{
+    margin-left: 15px;
+    font-size: 16px;
+
+}
+
+.graded-assignments {
+    width: 500px;
+    height: 80px;
+    text-align: left;
+    background-color: #ADD8E6;
+    border-radius: 3px;
+    margin-top: -10px;
+    border: 5px solid black;
+
+}
+
+.graded-assignments p{
+    margin-left: 5px;
+}
+
+input[type=button] {
+    width: 25%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type=button]:hover {
+    background-color: #45a049;
+}
+
+
+
+/*-------------------TeacherCertainClass------------------------ */
+.math-class{
+    margin-top: -20px;
+    margin-bottom: 10px;
+    padding: 5px;
+
+
+
+}
+
+.math-class img{
+    margin-left: 15px;
+    border: 5px solid black;
+}
+
+
+.student-roster{
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    padding: 10px;
+    margin-right: 5px;
+    margin-bottom: -35px;
+}
+
+.btn{
+    background-color:  #b3ffff;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+    padding: 8px 22px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: block;
+    transition-duration: 0.4s;
+
+}
+
+.btn:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.text{
+    display: block;
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-left: 20px;
+    width: 460px;
+    height: 220px;
+}
+
+/*------------------------CreateAssignment--------------------*/
+.assign{
+    margin-left:5px;
+    margin-bottom: 80px;
+}
+
+/*-----------------------CreateClass------------------------------*/
+
+.container{
+    margin-left: 15px;
+    margin-bottom: 93px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 25%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/*-----------------CertainAssignment---------------*/
+short-answer-wrap h2,p{
+    margin-left: 15px;
+}
+
+
+/*-------------------PendingApplications---------------*/
+.pending{
+    margin-left: 15px;
+    padding-top: 50px;
+    margin-bottom: 200px;
+}
+
+
+
+
+footer{
+    border: 5px solid black;
+    background-image: linear-gradient(#c31432, #240b36);
+    color: #F7FFF7;
+    margin-top: 30px;
+    margin-bottom:-5px;
+    padding: 0;
+}
+
+.contact-list{
+    margin-right: 10px;
+    margin-left: 10px;
+    display:flex;
+    list-style-type:none;
+    padding: 0;
+    justify-content: space-between;
+}
